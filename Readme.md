@@ -1,7 +1,7 @@
 # Личный проект «YetiCave»
 
 * Студент: [Юлия Цапова](https://up.htmlacademy.ru/php/9/user/479537).
-* Наставник: `Неизвестно`.
+* Наставник: [Антон Попов] (https://htmlacademy.ru/profile/joker).
 
 ---
 
