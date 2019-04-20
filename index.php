@@ -4,48 +4,48 @@ $is_auth = rand(0, 1);
 $user_name = 'Юлия';
 
 $categories = [
-    1 => 'Доски и лыжи',
-    2 => 'Крепления',
-    3 => 'Ботинки',
-    4 => 'Одежда',
-    5 => 'Инструменты',
-    6 => 'Разное'
+    'boards' => 'Доски и лыжи',
+    'attachment' => 'Крепления',
+    'boots' => 'Ботинки',
+    'clothing' => 'Одежда',
+    'tools' => 'Инструменты',
+    'other' => 'Разное'
 ];
 
 $lots = [
     [
         'name' => '2014 Rossignol District Snowboard',
-        'category' => $categories[1],
+        'category' => $categories['boards'],
         'price' => 10999,
         'img_url' => 'img/lot-1.jpg'
     ],
     [
         'name' => 'DC Ply Mens 2016/2017 Snowboard',
-        'category' => $categories[1],
+        'category' => $categories['boards'],
         'price' => 159999,
         'img_url' => 'img/lot-2.jpg'
     ],
     [
         'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-        'category' => $categories[2],
+        'category' => $categories['attachment'],
         'price' => 8000,
         'img_url' => 'img/lot-3.jpg'
     ],
     [
         'name' => 'Ботинки для сноуборда DC Mutiny Charocal',
-        'category' => $categories[3],
+        'category' => $categories['boots'],
         'price' => 10999,
         'img_url' => 'img/lot-4.jpg'
     ],
     [
         'name' => 'Куртка для сноуборда DC Mutiny Charocal',
-        'category' => $categories[4],
+        'category' => $categories['clothing'],
         'price' => 7500,
         'img_url' => 'img/lot-5.jpg'
     ],
     [
         'name' => 'Маска Oakley Canopy',
-        'category' => $categories[6],
+        'category' => $categories['other'],
         'price' => 5400,
         'img_url' => 'img/lot-6.jpg'
     ]
@@ -113,8 +113,8 @@ function format_price($price) {
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
         <ul class="promo__list">
-        <?php foreach ($categories as $category): ?>
-            <li class="promo__item promo__item--boards">
+        <?php foreach ($categories as $key => $category): ?>
+            <li class="promo__item promo__item--<?= $key; ?>">
                 <a class="promo__link" href="pages/all-lots.html"><?= $category; ?></a>
             </li>
         <?php endforeach; ?>
