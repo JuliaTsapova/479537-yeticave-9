@@ -51,21 +51,23 @@ $lots = [
     ]
 ];
 
+/**
+ * Возвращает отформатированное число для поля "цена" в лотах.
+ * 
+ * @param float $price Число, которое будет являться ценой;
+ * 
+ * @return string $price Готовое выражение, содержащее в себе отформатированное число.
+ */
+
 function format_price($price) {
-    $price = ceil($price);
+    $price = number_format(ceil($price), 0, '', ' ');
 
-    if($price >= 1000) {
-        $price = number_format($price, 0, '', ' ');
-    }
-
-    $formatted_price = $price . ' ₽';
-
-    return $formatted_price;
+    return $price . ' ₽';
 }
 
 require('helpers.php'); 
 
-$page_content = include_template('main.php', [
+$page_content = include_template('index.php', [
     'categories' => $categories,
     'lots' => $lots
 ]);
