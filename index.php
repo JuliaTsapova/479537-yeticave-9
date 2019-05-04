@@ -65,11 +65,16 @@ function format_price($price) {
     return $price . ' ₽';
 }
 
+date_default_timezone_set("Asia/Novosibirsk");
+
+$time_before_tomorrow = strtotime('tomorrow') - time();
+
 require('helpers.php'); 
 
 $page_content = include_template('index.php', [
     'categories' => $categories,
-    'lots' => $lots
+    'lots' => $lots,
+    'time' => $time_before_tomorrow
 ]);
 
 $layout_content = include_template('layout.php', [
