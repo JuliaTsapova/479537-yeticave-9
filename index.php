@@ -69,12 +69,15 @@ date_default_timezone_set("Asia/Novosibirsk");
 
 $time_before_tomorrow = strtotime('tomorrow') - time();
 
+$timer = ($time_before_tomorrow / 3600 < 1) ? 'timer--finishing' : '';
+
 require('helpers.php'); 
 
 $page_content = include_template('index.php', [
     'categories' => $categories,
     'lots' => $lots,
-    'time' => $time_before_tomorrow
+    'time' => $time_before_tomorrow,
+    'timer' => $timer
 ]);
 
 $layout_content = include_template('layout.php', [
