@@ -27,7 +27,7 @@
                             <span class="lot__amount">Стартовая цена</span>
                             <span class="lot__cost"><?= format_price(htmlspecialchars($lot['price'])); ?></span>
                         </div>
-                        <div class="lot__timer timer <?php if ($time / 3600 <  1):  print('timer--finishing'); endif; ?>">
+                        <div class="lot__timer timer <?= $timer; ?>">
                             <?= gmdate('H:i', $time) ?>
                         </div>
                     </div>
