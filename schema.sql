@@ -1,3 +1,5 @@
+DROP DATABASE IF EXIST yeticave;
+
 CREATE DATABASE yeticave
 DEFAULT CHARACTER SET utf8
 DEFAULT COLLATE utf8_general_ci;
@@ -7,7 +9,7 @@ USE yeticave;
 CREATE TABLE category (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE,
-    code VARCHAR(255) NOT NULL
+    code VARCHAR(255) NOT NULL UNIQUE
     );
 
 CREATE TABLE lot (
@@ -16,7 +18,7 @@ CREATE TABLE lot (
     name VARCHAR(255) NOT NULL,
     description TEXT,
     img VARCHAR(255) NOT NULL,
-    price DECIMAL NOT NULL,
+    price INT NOT NULL,
     finish_time DATETIME NOT NULL,
     step INT NOT NULL,
     user_id INT NOT NULL,
@@ -39,7 +41,5 @@ CREATE TABLE user (
     name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     img VARCHAR(255),
-    contact VARCHAR(255) NOT NULL,
-    lot_id INT NOT NULL,
-    rate_id INT NOT NULL
+    contact VARCHAR(255) NOT NULL
 )
