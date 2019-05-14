@@ -1,4 +1,4 @@
-DROP DATABASE IF EXIST yeticave;
+DROP DATABASE IF EXISTS yeticave;
 
 CREATE DATABASE yeticave
 DEFAULT CHARACTER SET utf8
@@ -18,7 +18,7 @@ CREATE TABLE lot (
     name VARCHAR(255) NOT NULL,
     description TEXT,
     img VARCHAR(255) NOT NULL,
-    price INT NOT NULL,
+    start_price INT NOT NULL,
     finish_time DATETIME NOT NULL,
     step INT NOT NULL,
     user_id INT NOT NULL,
