@@ -13,12 +13,12 @@ INSERT INTO category
 -- Добавляем объявления.
 INSERT INTO lot
 (name, description, img, start_price, finish_time, step, user_id, winner_id, category_id) VALUES
-('2014 Rossignol District Snowboard', NULL, 'img/lot-1.jpg', 10999, NOW() + INTERVAL 1 DAY, 100, 1, NULL, 1),
-('DC Ply Mens 2016/2017 Snowboard', NULL, 'img/lot-1.jpg', 159999, NOW() + INTERVAL 2 DAY, 100, 2, NULL, 1),
-('Крепления Union Contact Pro 2015 года размер L/XL', NULL, 'img/lot-3.jpg', 8000, NOW() + INTERVAL 3 DAY, 100, 2, NULL, 2),
-('Ботинки для сноуборда DC Mutiny Charocal', NULL, 'img/lot-4.jpg', 10999, NOW() + INTERVAL 1 DAY, 100, 1, NULL, 3),
-('Куртка для сноуборда DC Mutiny Charocal', NULL, 'img/lot-5.jpg', 7500, NOW() + INTERVAL 2 DAY, 100, 1, NULL, 4),
-('Маска Oakley Canopy', NULL, 'img/lot-6.jpg', 5400, NOW() + INTERVAL 3 DAY, 100, 2, NULL, 6);
+('2014 Rossignol District Snowboard', NULL, 'lot-1.jpg', 10999, NOW() + INTERVAL 1 DAY, 100, 1, NULL, 1),
+('DC Ply Mens 2016/2017 Snowboard', NULL, 'lot-1.jpg', 159999, NOW() + INTERVAL 2 DAY, 100, 2, NULL, 1),
+('Крепления Union Contact Pro 2015 года размер L/XL', NULL, 'lot-3.jpg', 8000, NOW() + INTERVAL 3 DAY, 100, 2, NULL, 2),
+('Ботинки для сноуборда DC Mutiny Charocal', NULL, 'lot-4.jpg', 10999, NOW() + INTERVAL 1 DAY, 100, 1, NULL, 3),
+('Куртка для сноуборда DC Mutiny Charocal', NULL, 'lot-5.jpg', 7500, NOW() + INTERVAL 2 DAY, 100, 1, NULL, 4),
+('Маска Oakley Canopy', NULL, 'lot-6.jpg', 5400, NOW() + INTERVAL 3 DAY, 100, 2, NULL, 6);
 
 -- Добавляем пользователей.
 INSERT INTO user
@@ -33,7 +33,7 @@ INSERT INTO rate
 (700, 2, 5);
 
 -- Получаем все категории.
-SELECT * FROM category;
+SELECT name, code FROM category;
 
 -- Получаем лоты.
 SELECT l.create_date, l.name, l.start_price, l.img, c.name AS category, (l.start_price  + MAX(r.price)) AS price  FROM lot l
